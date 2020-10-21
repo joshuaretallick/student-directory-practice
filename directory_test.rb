@@ -17,17 +17,24 @@ def input_students
   students
 end
 
+# printing header statement
 def print_header
   puts "The students of Villains Academy"
-  puts "-------------".center(10)
+  puts "-------------"
 end
 
+# printing the list of students
 def print(students)
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+# 1. Modify the program to print a number before the name of each student
+  students.each_with_index do |student, index|
+# 2. Only print students that begin with a specific letter
+    if student[:name].start_with?("D")
+      puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    end
   end
 end
 
+# printing the footer with count tally
 def print_footer(students)
   puts "Overall, we have #{students.count} great students"
 end
