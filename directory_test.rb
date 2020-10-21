@@ -28,7 +28,8 @@ def print(students)
 # 1. Modify the program to print a number before the name of each student
   students.each_with_index do |student, index|
 # 2. Only print students that begin with a specific letter
-    if student[:name].start_with?("D")
+# 3. Only print the students whose name is shorter than 12 characters
+    if student[:name].start_with?("D") && student[:name].length < 12
       puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
     end
   end
@@ -39,6 +40,7 @@ def print_footer(students)
   puts "Overall, we have #{students.count} great students"
 end
 
+# starts the whole process
 students = input_students
 #nothing happens until we call the methods
 print_header
