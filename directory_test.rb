@@ -25,13 +25,11 @@ end
 
 # printing the list of students
 def print(students)
-# 1. Modify the program to print a number before the name of each student
-  students.each_with_index do |student, index|
-# 2. Only print students that begin with a specific letter
-# 3. Only print the students whose name is shorter than 12 characters
-    if student[:name].start_with?("D") && student[:name].length < 12
-      puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
-    end
+# 4. Rewrite each method as while or until methods
+  counter = 0
+  while counter < students.length do
+    puts "#{students[counter][:name]} (#{students[counter][:cohort]} cohort)"
+    counter += 1
   end
 end
 
